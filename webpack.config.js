@@ -14,9 +14,12 @@ module.exports = {
     mode: 'development',
     devtool: "source-map",
     devServer: {
+        static: {
+            directory: path.join(__dirname, "dist")
+        },
         historyApiFallback: true,
         // contentBase: path.resolve(__dirname, './dist'),
-        hot: true,
+        hot: false,
         open: true,
         compress: true,
         port: 8080,
