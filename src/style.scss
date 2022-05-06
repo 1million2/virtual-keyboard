@@ -1,4 +1,4 @@
-$font-size: 2rem;
+$font-size: 20px;
 $color-red: rgb(131, 131, 156);
 body {
     font-size: $font-size;
@@ -6,10 +6,45 @@ body {
 }
 .container {
     display: flex;
+    flex-wrap: wrap;
+    width: 917px;
+    row-gap: 5px;
+    column-gap: 5px;
+    padding: 15px;
+    border: solid black 1px;
+}
+[data-code='ArrowUp'] {
+    margin-right: 32px;
 }
 .btn-body {
+    display: flex;
+    flex: 0 0 auto;
     width: 50px;
     height: 50px;
-    background-color: azure;
+    background-color: rgb(155, 155, 155);
     border: 1px solid black;
+    text-align: center;
+
+    &.dark {
+        background-color: rgb(124, 124, 124);
+    }
+    &.active {
+        background-color: aqua;
+    }
+    &.xl {
+        width: 400px;
+    }
+    &.large {
+        width: 107px;
+    }
+    &.medium {
+        width: 70px;
+    }
+    &.left-shift {
+        width: 144px;
+    }
+    &.click {
+        background-color: burlywood;
+    }
+
 }

@@ -1,6 +1,7 @@
 export const buttons = [
   {
     data_code: "Backquote",
+    data_content: '`',
     data_ru: "ё",
     data_en: "`",
     data_ru_shift: "Ё",
@@ -77,7 +78,7 @@ export const buttons = [
     data_en_shift: ")"
   },
   {
-    data_code: "-",
+    data_code: "Minus",
     data_ru: "-",
     data_en: "-",
     data_ru_shift: "_",
@@ -92,15 +93,13 @@ export const buttons = [
   },
   {
     data_code: "Backspace",
-    data_no_type: true
+    data_no_type: true,
+    data_content: 'Backspace'
   },
   {
     data_code: "Tab",
-    data_no_type: true
-  },
-  {
-    data_code: "Equal",
-    data_no_type: true
+    data_no_type: true,
+    data_content: 'Tab'
   },
   {
     data_code: "KeyQ",
@@ -187,21 +186,232 @@ export const buttons = [
     data_en_shift: "}"
   },
   {
-    data_code: "BackSlash",
-    data_ru: "/\/",
-    data_en: '/\/',
+    data_code: "Backslash",
+    data_ru: "\\",
+    data_en: '&#92',
     data_ru_shift: "|",
     data_en_shift: "|"
   },
   {
-    data_code: "Delete",
+    data_code: "CapsLock",
+    data_no_type: true,
+    data_content: 'Caps Lock'
+  },
+  {
+    data_code: "KeyA",
+    data_ru: "ф",
+    data_en: 'a',
+    data_ru_shift: "Ф",
+    data_en_shift: "A"
+  },
+  {
+    data_code: "KeyS",
+    data_ru: "ы",
+    data_en: 's',
+    data_ru_shift: "Ы",
+    data_en_shift: "S"
+  },
+  {
+    data_code: "KeyD",
+    data_ru: "в",
+    data_en: 'd',
+    data_ru_shift: "В",
+    data_en_shift: "D"
+  },
+  {
+    data_code: "KeyF",
+    data_ru: "а",
+    data_en: 'f',
+    data_ru_shift: "А",
+    data_en_shift: "F"
+  },
+  {
+    data_code: "KeyG",
+    data_ru: "п",
+    data_en: 'g',
+    data_ru_shift: "П",
+    data_en_shift: "G"
+  },
+  {
+    data_code: "KeyH",
+    data_ru: "р",
+    data_en: 'h',
+    data_ru_shift: "Р",
+    data_en_shift: "H"
+  },
+  {
+    data_code: "KeyJ",
+    data_ru: "о",
+    data_en: 'j',
+    data_ru_shift: "О",
+    data_en_shift: "J"
+  },
+  {
+    data_code: "KeyK",
+    data_ru: "л",
+    data_en: 'k',
+    data_ru_shift: "Л",
+    data_en_shift: "K"
+  },
+  {
+    data_code: "KeyL",
+    data_ru: "д",
+    data_en: 'l',
+    data_ru_shift: "Д",
+    data_en_shift: "L"
+  },
+  {
+    data_code: "Semicolon",
+    data_ru: "ж",
+    data_en: ';',
+    data_ru_shift: "Ж",
+    data_en_shift: ":"
+  },
+  {
+    data_code: "Quote",
+    data_ru: "э",
+    data_en: "'",
+    data_ru_shift: "Э",
+    data_en_shift: '"'
+  },
+  {
+    data_code: "Slash",
+    data_ru: "\/",
+    data_en: "\/",
+    data_ru_shift: "/",
+    data_en_shift: '|'
+  },
+  {
+    data_code: "Enter",
+    data_content: 'Enter',
     data_no_type: true
   },
   {
-    data_code: "BackSlash",
-    data_ru: "/\/",
-    data_en: '/\/',
-    data_ru_shift: "|",
-    data_en_shift: "|"
+    data_code: "ShiftLeft",
+    data_content: 'Shift',
+    data_no_type: true
+  },
+  {
+    data_code: "KeyZ",
+    data_ru: "я",
+    data_en: "z",
+    data_ru_shift: "Я",
+    data_en_shift: 'Z'
+  },
+  {
+    data_code: "KeyX",
+    data_ru: "ч",
+    data_en: "x",
+    data_ru_shift: "Ч",
+    data_en_shift: 'X'
+  },
+  {
+    data_code: "KeyC",
+    data_ru: "c",
+    data_en: "c",
+    data_ru_shift: "C",
+    data_en_shift: 'C'
+  },
+  {
+    data_code: "KeyV",
+    data_ru: "м",
+    data_en: "v",
+    data_ru_shift: "М",
+    data_en_shift: 'V'
+  },
+  {
+    data_code: "KeyB",
+    data_ru: "и",
+    data_en: "b",
+    data_ru_shift: "И",
+    data_en_shift: 'B'
+  },
+  {
+    data_code: "KeyN",
+    data_ru: "Т",
+    data_en: "n",
+    data_ru_shift: "Т",
+    data_en_shift: 'N'
+  },
+  {
+    data_code: "KeyM",
+    data_ru: "Ь",
+    data_en: "m",
+    data_ru_shift: "Ь",
+    data_en_shift: 'M'
+  },
+  {
+    data_code: "Comma",
+    data_ru: "б",
+    data_en: ",",
+    data_ru_shift: "Б",
+    data_en_shift: '<'
+  },
+  {
+    data_code: "Period",
+    data_ru: "ю",
+    data_en: ".",
+    data_ru_shift: "Ю",
+    data_en_shift: '>'
+  },
+  {
+    data_code: "ShiftRight",
+    data_no_type: true,
+    data_content: 'Shift'
+  },
+  {
+    data_code: "ArrowUp",
+    data_no_type: true,
+    data_content: '&#9650'
+  },
+  {
+    data_code: "ControlLeft",
+    data_no_type: true,
+    data_content: 'Ctrl'
+  },
+  {
+    data_code: "MetaLeft",
+    data_no_type: true,
+    data_content: 'Win'
+  },
+  {
+    data_code: "AltLeft",
+    data_no_type: true,
+    data_content: 'Alt'
+  },
+  {
+    data_code: "Space",
+    data_no_type: true,
+    data_content: ' '
+  },
+  {
+    data_code: "AltRight",
+    data_no_type: true,
+    data_content: 'Alt'
+  },
+  {
+    data_code: "MetaRight",
+    data_no_type: true,
+    data_content: 'Win'
+  },
+  {
+    data_code: "ControlRight",
+    data_no_type: true,
+    data_content: 'Ctrl'
+  },
+  {
+    data_code: "ArrowLeft",
+    data_no_type: true,
+    data_content: '&#9668;'
+  },
+  {
+    data_code: "ArrowDown",
+    data_no_type: true,
+    data_content: '&#9660;'
+  },
+  {
+    data_code: "ArrowRight",
+    data_no_type: true,
+    data_content: '&#9658;'
   },
 ]
