@@ -1,8 +1,16 @@
 $font-size: 20px;
-$color-red: rgb(131, 131, 156);
+$silver: rgb(155, 155, 155);
+$silver-dark: rgb(124, 124, 124);
+$active-color: burlywood;
+$bcg: rgb(190, 190, 190);
 body {
     font-size: $font-size;
-    background-color: $color-red;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .container {
     display: flex;
@@ -12,27 +20,31 @@ body {
     column-gap: 5px;
     padding: 15px;
     border: solid black 1px;
+    background-color: $bcg;
 }
 [data-code='ArrowUp'] {
     margin-right: 32px;
 }
+textarea {
+    width: 500px;
+    height: 200px;
+}
 .btn-body {
     display: flex;
     flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
-    background-color: rgb(155, 155, 155);
+    background-color: $silver;
     border: 1px solid black;
-    text-align: center;
+    cursor: pointer;
 
     &.dark {
-        background-color: rgb(124, 124, 124);
-    }
-    &.active {
-        background-color: aqua;
+        background-color: $silver-dark;
     }
     &.xl {
-        width: 400px;
+        width: 372px;
     }
     &.large {
         width: 107px;
@@ -43,8 +55,8 @@ body {
     &.left-shift {
         width: 144px;
     }
-    &.click {
-        background-color: burlywood;
+    &.active {
+        background-color: $active-color;
     }
 
 }

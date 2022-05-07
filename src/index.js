@@ -5,14 +5,6 @@ const container = document.querySelector('#root')
 const text = document.querySelector('#text');
 
 
-class KeyBoard {
-  constructor() {
-
-  }
-  changeLang () {
-
-  }
-}
 
 
 class Key {
@@ -25,12 +17,16 @@ class Key {
     this.data_no_type = data_no_type
     this.data_content = data_content
   }
-  create () {
+  create (option) {
     const el = document.createElement('div');
-    const enLang = document.createElement('div')
     el.setAttribute("data-code",this.data_code);
     el.setAttribute("data-no-type",this.data_no_type);
-    el.innerHTML = this.data_content ? this.data_content: this.data_ru;
+    if (option === 'Shift') {
+      el.innerHTML = this.data_content ? this.data_content: this.data_ru_shift;
+    }
+     else {
+      el.innerHTML = this.data_content ? this.data_content: this.data_ru;
+    }
     el.classList.add('btn-body')
     if(this.data_content) {
       el.classList.add('dark')
@@ -51,20 +47,20 @@ class Key {
   }
 }
 
-function createButtons () {
+
+function createButtons (option) {
+  container.innerHTML = ''
   buttons.forEach(item => {
     const node = new Key(item.data_code,item.data_ru,item.data_en,item.data_ru_shift,item.data_en_shift,item.data_no_type,item.data_content);
-    container.append(node.create())
+    container.append(node.create(option))
   })
 }
 
+function cursorSetFocus () {
+  text.focus()
+  text.selectionStart = text.value.length;
+}
 
-document.addEventListener('keydown', (e) => {
-  
-    console.log(e.code);
-    
-
-})
 
 
 
@@ -72,32 +68,72 @@ document.addEventListener('keydown', (e) => {
   e.preventDefault()
   if(document.querySelector(`[data-code=${e.code}]`)){
     const el = document.querySelector(`[data-code=${e.code}]`)
-    el.classList.add('click')
-    text.innerHTML += el.innerText
-  }
-  if (e.code === 'ShiftLeft') {
-    container.innerHTML = ''
-    
+    el.classList.add('active')
+    if(el.getAttribute('data-no-type') === 'false') {
+      text.innerHTML += el.innerHTML
+      cursorSetFocus ()
+    }
+    // при клике на Backspace стираем последний символ с textarea
+    if(e.code === 'Backspace') {
+      text.innerHTML = text.innerHTML.slice(0,-1)
+      cursorSetFocus ()
+    }
+    if(e.code === 'Tab') {
+      text.innerHTML += '   '
+      cursorSetFocus ()
+    }
+    if(e.code === 'Space') {
+      text.innerHTML += ' '
+      cursorSetFocus ()
+    }
+    if(e.code === 'Enter') {
+      text.innerHTML += '\n'
+      cursorSetFocus ()
+    }
+    if(e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+      createButtons('Shift')
+    }
   }
 })
 
 document.addEventListener('keyup', (e) => {
   if(document.querySelector(`[data-code=${e.code}]`)) {
     const el = document.querySelector(`[data-code=${e.code}]`)
-    el.classList.remove('click')
+    el.classList.remove('active')
+  }
+  if(e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+    createButtons()
   }
 })
 
 document.addEventListener('mousedown', (e) => {
-
   if(e.target.classList.contains('btn-body')){
     e.target.classList.add('active')
-    text.innerHTML += e.target.innerText
+    if(e.target.getAttribute('data-no-type') === 'false') {
+      text.innerHTML += e.target.innerHTML
+    }
+    // при клике на Backspace стираем последний символ с textarea
+    if(e.target.getAttribute('data-code') === 'Backspace') {
+      text.innerHTML = text.innerHTML.slice(0,-1)
+    }
+    if(e.target.getAttribute('data-code') === 'Space') {
+      text.innerHTML += ' '
+    }
+    if(e.target.getAttribute('data-code') === 'Enter') {
+      text.innerHTML += '\n'
+    }
+    if(e.target.getAttribute('data-code') === 'ShiftLeft') {
+      createButtons('tab')
+    }
   }
 })
 document.addEventListener('mouseup', (e) => {
   if(e.target.classList.contains('btn-body')){
     e.target.classList.remove('active')
+    cursorSetFocus()
+  }
+  if(e.target.getAttribute('data-code') === 'ShiftLeft') {
+    createButtons()
   }
 })
 createButtons ()

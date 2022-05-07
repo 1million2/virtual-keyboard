@@ -328,14 +328,14 @@ export const buttons = [
   },
   {
     data_code: "KeyN",
-    data_ru: "Т",
+    data_ru: "т",
     data_en: "n",
     data_ru_shift: "Т",
     data_en_shift: 'N'
   },
   {
     data_code: "KeyM",
-    data_ru: "Ь",
+    data_ru: "ь",
     data_en: "m",
     data_ru_shift: "Ь",
     data_en_shift: 'M'
